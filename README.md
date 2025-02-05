@@ -175,7 +175,9 @@ elf = 'build/main.elf'
 
 
 
-https://github.com/user-attachments/assets/1cb5ff3f-3bc1-4b1f-a468-651a5e83f5a7
+https://github.com/user-attachments/assets/528f7b22-f3cf-4acd-9472-1ffc0b673ef5
+
+
 
 
 
