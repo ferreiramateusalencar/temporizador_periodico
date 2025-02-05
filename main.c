@@ -57,14 +57,14 @@ int main() {
             np_clear();
             for (int i = 0; i < LED_COUNT; i++) {
                 if (current_state == RED && sprites[0][i]) {
-                    printf("Semaforo Fechado...\n");
+                    printf("Semáforo Fechado...\n");
                     np_set_led(i, 0, 20, 0);
-                } else if (current_state == GREEN && sprites[1][i]) {
-                    printf("Atenção, semáforo aberto...\n");
-                    np_set_led(i, 20, 20, 0);
                 } else if (current_state == YELLOW && sprites[2][i]) {
                     printf("Atenção, semáforo irá fechar...\n");
                     np_set_led(i, 20, 0, 0);
+                } else if (current_state == GREEN && sprites[1][i]) {
+                    printf("Semáforo aberto...\n");
+                    np_set_led(i, 20, 20, 0);
                 } 
             }
             np_write();

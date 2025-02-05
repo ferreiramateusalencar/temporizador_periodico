@@ -1,8 +1,8 @@
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=00bfbf&height=120&section=header"/>
-<h1 align="center"><img align="center" style="border-radius: 100%;" src="https://moodle.embarcatech.cepedi.org.br/pluginfile.php/1/theme_moove/logo/1733422525/Group%20658.png" width="300px;" alt=""><br>Animation BitDogLab</h1>
+<h1 align="center"><img align="center" style="border-radius: 100%;" src="https://moodle.embarcatech.cepedi.org.br/pluginfile.php/1/theme_moove/logo/1733422525/Group%20658.png" width="300px;" alt=""><br>Temporizador Período com BitDogLab</h1>
 
 <h3 align="center">
-   Para consolidar a compreensão dos conceitos relacionados ao uso de interrupções no microcontrolador RP2040 e explorar as funcionalidades da placa de desenvolvimento BitDogLab, propõe-se a seguinte tarefa prática. 
+   Com o emprego da função add_repeating_timer_ms(), presente na ferramenta Pico SDK, projete um semáforo com temporização de 3 segundos para cada alteração de sinal. O fluxograma simplificado de atuação do semáforo. 
 </h3>
 
 <h4 align="center">
@@ -58,8 +58,7 @@ temporizador_periodico
     - demonstration.mp4
 
 - include/&emsp;&emsp;&emsp;&emsp;# includes do projeto
-  - buttons.h
-  - led_red.h
+  - led_rgb.h
   - matriz_led.h
   - sprites.h
 
@@ -67,8 +66,7 @@ temporizador_periodico
   - ws2812.pio
     
 - src/&emsp;&emsp;&emsp;&emsp;# códigos do projeto
-  - buttons.c
-  - led_red.c
+  - led_rgb.c
   - matriz_led.c
   - sprites.c
 
@@ -82,11 +80,11 @@ temporizador_periodico
 
 - LICENSE
 
+- main.c&emsp;&emsp;&emsp;&emsp;# Código principal do projeto
+
 - pico_sdk_import.cmake
 
 - README.md
-
-- temporizador_periodico.c&emsp;&emsp;&emsp;&emsp;# Código principal do projeto
 
 - wokwi.toml
 </i>
@@ -100,7 +98,6 @@ temporizador_periodico
   - 3) A mudança de estado dos LEDs deve ser implementa na função de call-back do temporizador, a exemplo da rotina trabalhada na aula síncrona - repeating_timer_callback().
   - 4) A rotina principal, presente no interior da estrutura de repetição while, deve imprimir algum tipo de informação a cada segundo (1.000 ms) - a mensagem enviada pela porta serial fica a critério do discente.
   - 5) Com o emprego da Ferramenta Educacional BitDogLab, faça um experimento com o código deste exercício utilizando o LED RGB – GPIOs 11, 12 e 13.
-
 
 ---
 
@@ -147,8 +144,8 @@ $ git clone https://github.com/ferreiramateusalencar/temporizador_periodico.git
 ```
 [wokwi]
 version = 1
-firmware = 'build/temporizador_periodico.hex'
-elf = 'build/temporizador_periodico.elf'
+firmware = 'build/main.hex'
+elf = 'build/main.elf'
 ```
 - Abra o arquivo <i>diagram.json</i>
 
@@ -164,7 +161,7 @@ elf = 'build/temporizador_periodico.elf'
 - Na aba da extensão [Raspberry Pi Pico](https://marketplace.visualstudio.com/items?itemName=raspberry-pi.raspberry-pi-pico), aperte para Importar o projeto
 - Compile o projeto
 - Entre na pasta <i>build/</i>
-- Cole o arquivo <i>temporizador_periodico.uf2</i> no armazenamento placa BitDog
+- Cole o arquivo <i>main.uf2</i> no armazenamento placa BitDog
 <br>
 
 ---
